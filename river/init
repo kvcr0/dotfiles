@@ -18,8 +18,8 @@ riverctl map normal Super P spawn 'bemenu-run --fn "IBM Plex Mono 12"'
 riverctl map normal Super+Alt G spawn 'grim -g "$(slurp)" - | wl-copy'
 riverctl map normal Super+Alt S spawn 'grim -g "$(slurp)" $HOME/Pictures/Screenshots/$(date +%s).png'
 
-riverctl map normal Super+Control C spawn 'kenshictl switch code'
-riverctl map normal Super+Control G spawn 'kenshictl switch game'
+riverctl map normal Super+Control C spawn 'kanshictl switch code'
+riverctl map normal Super+Control G spawn 'kanshictl switch game'
 
 riverctl map normal Super+Control L spawn 'waylock'
 
