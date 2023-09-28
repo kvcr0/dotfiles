@@ -24,6 +24,6 @@ vim.opt.updatetime = 50
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
-vim.o.clipboard = "unnamed"
+vim.o.clipboard = "unnamedplus"
 
 -- vim.g.codeium_no_map_tab = 1
