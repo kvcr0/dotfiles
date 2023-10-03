@@ -300,7 +300,7 @@ local theme = lush(function(injected_functions)
         LineNr { fg = hsl(0, 0, 45) },
         CursorLineNr { fg = yellow, gui = 'italic' },
         Pmenu { bg = bg, fg = fg },
-        NonText { fg = hsl(0, 0, 25), gui = 'italic' },
+        NonText { fg = hsl(0, 0, 25) },
         ColorColumn { bg = bg.de(50).li(20) },
         SignColumn { bg = bg },
         Constant { fg = red },               -- (*) Any constant
@@ -319,10 +319,12 @@ local theme = lush(function(injected_functions)
         -- sym "@field" { fg = hsl(25, 90, 73) },  -- Identifier
         sym "@field" { fg = red },                                       -- Identifier
         DiagnosticUnderlineError { fg = hsl(0, 100, 50), gui = 'bold' }, -- Used to underline "Error" diagnostics.
-        DiagnosticUnderlineWarn { fg = hsl(0, 100, 50), gui = 'bold' },  -- Used to underline "Warn" diagnostics.
-        DiagnosticUnderlineInfo { fg = hsl(0, 100, 50), gui = 'bold' },  -- Used to underline "Info" diagnostics.
-        DiagnosticUnderlineHint { fg = hsl(0, 100, 50), gui = 'bold' },  -- Used to underline "Hint" diagnostics.
+        DiagnosticUnderlineWarn { fg = orange, gui = 'bold' },           -- Used to underline "Warn" diagnostics.
+        DiagnosticUnderlineInfo { fg = blue, gui = 'bold' },             -- Used to underline "Info" diagnostics.
+        DiagnosticUnderlineHint { fg = green, gui = 'bold' },            -- Used to underline "Hint" diagnostics.
         -- Search { bg = blue, fg = bg },
+        -- Todo { fg = red, gui = 'bold italic' },
+        sym "@text.todo" { fg = yellow, gui = 'bold' }, -- Todo
     }
 end)
 

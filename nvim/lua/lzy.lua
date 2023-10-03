@@ -16,10 +16,16 @@ require("lazy").setup({
     { dir = '~/.config/nvim/kvcr/' },
     'rktjmp/lush.nvim',
     'nvim-lua/plenary.nvim',
-    { 'nvim-treesitter/nvim-treesitter', cmd = 'TSUpdate', config = function() require'config.treesitter'.config() end },
-    {'nvim-telescope/telescope.nvim', config = function() require'config.telescope'.config() end},
+    {
+        'nvim-treesitter/nvim-treesitter',
+        build = 'TSUpdate',
+        config = function()
+            require 'config.treesitter'.config()
+        end
+    },
+    { 'nvim-telescope/telescope.nvim', config = function() require 'config.telescope'.config() end },
     'nvim-lua/popup.nvim',
-    {'numToStr/Comment.nvim', config = function() require'config.comment'.config() end},
+    { 'numToStr/Comment.nvim', config = function() require 'config.comment'.config() end },
     {
         'williamboman/mason.nvim',
         build = ':MasonUpdate',
@@ -28,10 +34,10 @@ require("lazy").setup({
         end
     },
     -- 'williamboman/mason-lspconfig.nvim'
-    { 'neovim/nvim-lspconfig', config = function() require'config.lsp'.config() end },
+    { 'neovim/nvim-lspconfig', config = function() require 'config.lsp'.config() end },
 
     -- cmp
-    {'hrsh7th/nvim-cmp', config = function() require'config.cmp'.config() end},
+    { 'hrsh7th/nvim-cmp',      config = function() require 'config.cmp'.config() end },
     'hrsh7th/cmp-nvim-lsp',
     'hrsh7th/cmp-nvim-lua',
     'hrsh7th/cmp-buffer',
@@ -42,17 +48,20 @@ require("lazy").setup({
     --snippets
     'L3MON4D3/LuaSnip',
     'rafamadriz/friendly-snippets',
-
-    {'kylechui/nvim-surround', config = function() require'config.surround'.config() end},
-    { 'windwp/nvim-autopairs', config = function() require'config.autopairs'.config() end },
-    { 'lukas-reineke/indent-blankline.nvim', config = function() require'config.indent'.config() end },
+    { 'kylechui/nvim-surround', config = function() require 'config.surround'.config() end },
+    { 'windwp/nvim-autopairs',  config = function() require 'config.autopairs'.config() end },
+    {
+        'lukas-reineke/indent-blankline.nvim',
+        main = "ibl",
+        config = function()
+            require 'config.indent'.config()
+        end
+    },
     {
         'folke/trouble.nvim',
         dependencies = 'nvim-tree/nvim-web-devicons',
         config = function()
-            require('trouble').setup {
-
-            }
+            require 'config.trouble'
         end,
     },
     'kdheepak/cmp-latex-symbols',
@@ -64,30 +73,33 @@ require("lazy").setup({
         end,
     },
     { 'nvim-tree/nvim-web-devicons', opt = true },
-    { 'nvim-lualine/lualine.nvim', config = function() require'config.lualine'.config() end },
+    { 'nvim-lualine/lualine.nvim',   config = function() require 'config.lualine'.config() end },
     {
         'rebelot/heirline.nvim',
         event = 'UiEnter',
     },
-    { 'nvim-tree/nvim-tree.lua', config = function() require'config.tree'.config() end },
+    { 'nvim-tree/nvim-tree.lua',         config = function() require 'config.tree'.config() end },
     {
         'Exafunction/codeium.vim',
         -- config = function()
         --     vim.keymap.set('i', '<C-Tab>', function() return vim.fn['codeium#Accept']() end, { expr = true })
         -- end
     },
-    {'mfussenegger/nvim-dap', config = function() require'config.dap'.config() end},
-    {'rcarriga/nvim-dap-ui', config = function() require'config.dapui'.config() end},
-    {"rcarriga/nvim-notify", config = function() require'config.notify'.config() end},
+    { 'mfussenegger/nvim-dap',           config = function() require 'config.dap'.config() end },
+    { 'rcarriga/nvim-dap-ui',            config = function() require 'config.dapui'.config() end },
+    { "rcarriga/nvim-notify",            config = function() require 'config.notify'.config() end },
+    -- {
+    --     "folke/noice.nvim",
+    --     config = function()
+    --         require("noice").setup({
+    --         })
+    --     end,
+    -- },
+    { "MunifTanjim/nui.nvim", },
+    { 'folke/neodev.nvim', },
+    { 'HiPhish/rainbow-delimiters.nvim', config = function() require 'config.rainbow_delimiter'.config() end },
     {
-        "folke/noice.nvim",
-        config = function()
-            require("noice").setup({
-            })
-        end,
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-        }
+        'folke/todo-comments.nvim',
+        dependencies = 'nvim-lua/plenary.nvim'
     },
-    'folke/neodev.nvim'
 })

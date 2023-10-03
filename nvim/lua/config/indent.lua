@@ -1,10 +1,11 @@
 local M = {}
 
 M.config = function()
-require 'indent_blankline'.setup {
-    show_current_context = true,
-    -- show_current_context_start = true,
-}
+    require 'ibl'.setup {
+        indent = {
+            smart_indent_cap = true,
+        },
+    }
 end
 
 return M
