@@ -1,0 +1,12 @@
+[[language]]
+name = "rust"
+auto-format = true
+
+[[language]]
+name = "c"
+auto-format = true
+file-types = [ "c", "h" ]
+
+[[language]]
+name = "cpp"
+auto-format = true
