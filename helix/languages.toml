@@ -1,12 +1,37 @@
 [[language]]
-name = "rust"
-auto-format = true
+name = "html"
+file-types = ["html"]
+language-servers = ["emmet-ls", "html-languageserver"]
+
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = [ "--stdin" ]
 
 [[language]]
-name = "c"
+name = "svelte"
+file-types = ["svelte"]
+language-servers = ["svelteserver", "emmet-ls", "html-languageserver"]
+
+[[language]]
+name = "python"
+language-servers = ["pyright", "ruff"]
 auto-format = true
-file-types = [ "c", "h" ]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff-lsp"
+
+[language.formatter]
+command = "black"
+args = ["--line-length", "88", "--quiet", "-"]
+# [language-server.ruff.config.settings]
+# args = ["--ignore", "E501"]
 
 [[language]]
 name = "cpp"
 auto-format = true
+
+[language.formatter]
+command = "clang-format"
